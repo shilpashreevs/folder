@@ -1,2 +1,2 @@
 ifvg fbgu5htdlmv
-k
+all changes cane be viewed using git command
