@@ -1,0 +1,85 @@
+<html>
+<head>
+<style>
+body
+{
+background-color:gray;
+font-size:30px;
+}
+</style>
+<script>
+function validate()
+{
+var name=document.getElementById("z").value;
+var firstpassword=document.getElementById("y").value;
+var secondpassword=document.getElementById("x").value;
+var mail=document.getElementById("w").value;
+var atposition=mail.indexOf("@");
+var dotposition=mail.lastIndexOf(".");
+
+if(name=="")
+{
+alert("name can not be empty");
+return false;
+}
+if(firstpassword=="")
+{
+alert("password can not be empty");
+return false;
+}
+if(firstpassword.length<6)
+{
+alert("password must contain 8 characters");
+return false;
+}
+if(firstpassword.length>10)
+{
+alert("password must contain less than 10 characters");
+return false;
+}
+if(firstpassword.search(/[0-9]/)<0)
+{
+alert("password must contain atleast one numeric value");
+return false;
+}
+if(firstpassword.search(/[A-Z]/)<0)
+{
+alert("password must contain atleast one capital letter");
+return false;
+}
+if(secondpassword=="")
+{
+alert("confirm password can not be empty");
+return false;
+}
+if(firstpassword!=secondpassword)
+{
+alert("passwords are not matching");
+return false;
+}
+if(mail=="")
+{
+alert("email can not be empty");
+return false;
+}
+if(atposition<3 || dotposition<atposition+3 || dotposition+2>mail.length)
+{
+alert("enter valid email");
+return false;
+}
+}
+</script>
+</head>
+<body>
+
+<form action="c.html" name="f1" onsubmit="return validate();">
+<div class="2" align="center" >
+<p style="color:red">Registration Form</p>
+Username:<input type="text" name="us1" placeholder="abc" id="z"><br><br>
+Password:<input type="password" name="password" id="y" ><br><br>
+ConfirmPassword:<input type="password" name="password2" id="x"><br><br>
+EmailId:<input type="text" name="em" placeholder="abc@gmail.com" id="w"><br><br>
+<input type="submit" value="create">
+</div>
+</body>
+</html>
