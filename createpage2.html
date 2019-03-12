@@ -1,0 +1,400 @@
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="style.css">
+        <script src=""></script>
+
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+<!-- Slideshow container -->
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.resize{
+	height:350px;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Swiggy</h1>
+
+
+        </div>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="swiggy.jpg" style="width:100%" class="resize">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="11.jpg" style="width:100%" class="resize">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="33.jpg" style="width:100%" class="resize">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+
+
+
+
+
+
+
+        <div class="navbar">
+            <a href="#" class="active">Services</a>
+	    <a href="#">Login </a>
+            <a href="#">Information</a>
+            <a href="#">Carrer</a>
+            <a href="#">About us</a>
+            <a href="#" class="right">Contact-us</a>
+        </div>
+        <div class="row">
+           <!-- <div class="heading">
+                <h1>Main Heading</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+            </div>
+            <div class="grid-container">
+                    <div class="grid-item">1</div>
+                    <div class="grid-item">2</div>
+                    <div class="grid-item">3</div>  
+                    <div class="grid-item">4</div>
+                    <div class="grid-item">5</div>
+                    <div class="grid-item">6</div>  
+                    <div class="grid-item">7</div>
+                    <div class="grid-item">8</div>
+            </div>-->
+
+        </div>
+        <section>
+            <div class="heading">
+		<h2 style="color:blue">Please fill the following details to create your account</h2>
+                <form name="myform" action="create.html" onsubmit="loginValidate()">
+
+
+		First Name:<input type="text" >
+		Last Name:<input type="text" ><br><br>
+		Username:<input type="text" id="uname" placeholder="Enter the username"><sup>*</sup><br><br>
+		Password:<input type="password" id="pname" placeholder="Enter yourpassword"><sup>*</sup><br><br>
+		Email:<input type="text" id="ename" placeholder="Enter email id"><sup>*<sup><br><br>
+		
+		
+		<span>Country:</span><select id="c1" name="country" placeholder="Select country"><sup>*</sup>
+		<option value="" >Select your option</option>
+		<option value="India">India</option>
+		<option value="United States">United States</option>
+		<option value="United Kingdom">United Kingdom</option>
+                
+		</select><br><br><br>
+
+
+		
+
+Select Country: <select name="state" id="countySel" size="1">
+<option value="" selected="selected">Select Country</option>
+</select>
+<br>
+<br>
+Select State: <select name="countrya" id="stateSel" size="1">
+<option value="" selected="selected">Please select Country first</option>
+</select>
+<br>
+<br>
+Select District: <select name="district" id="districtSel" size="1">
+<option value="" selected="selected">Please select State first</option>
+</select><br>
+
+
+
+
+
+
+
+
+	<sup>*<sup>Address:<br><textarea rows="4" cols="50" name="comment" form="usrform"></textarea><br><br>
+
+		Pincode:<input type="text" ><sup>*</sup>
+               
+		DOB:<input type="date" >		
+		
+		
+		<input id="b1" type="submit" value="Create" >
+               <p><b>Note:</b> It is mandatory to fill the fields with *.</p>
+	</form>
+            </div>
+            <div class="heading">
+                    <h1 align="center">Sidebar</h1>
+                    <div class="grid-container">
+                          
+                            <div class="grid-item">
+                                <img src="10.jpg" alt="">
+                            </div>
+                            <div class="grid-item">
+                                <img src="11.jpg" alt="">
+                            </div>
+                            <div class="grid-item">
+                                <img src="33.jpg" alt="">
+                            </div>
+                            <div class="grid-item">
+                                <img src="22.jpg" alt="">
+                            </div>
+                            <div class="grid-item">
+                                <img src="44.jpg" alt="">
+                            </div>
+                            <div class="grid-item">
+                                    <img src="55.jpg" alt="">
+                            </div>
+                            <div class="grid-item">
+                                <img src="66.jpg" alt="">
+                            </div>
+                            <div class="grid-item">
+                                    <img src="77.jpg" alt="">
+                                </div>
+                                <div class="grid-item">
+                                    <img src="88.jpg" alt="">
+                                </div>
+                                <div class="grid-item">
+                                    <img src="99.jpg" alt="">
+                                </div>
+                                <div class="grid-item">
+                                    <img src="101.jpg" alt="">
+                                </div>
+                                <div class="grid-item">
+                                    <img src="102.jpg" alt="">
+                                </div>
+                                <div class="grid-item">
+                                        <img src="77.jpg" alt="">
+                                </div>
+                                <div class="grid-item">
+                                    <img src="33.jpg" alt="">
+                                </div>
+                    </div>
+            </div>
+
+        </section>
+        <div class="footer">
+            <h2>Footer</h2>
+        </div>
+
+
+<script>
+
+
+
+
+var stateObject = {
+"India": { "Delhi": ["new Delhi", "North Delhi"],
+"Kerala": ["Thiruvananthapuram", "Palakkad"],
+"Goa": ["North Goa", "South Goa"],
+},
+"Australia": {
+"South Australia": ["Dunstan", "Mitchell"],
+"Victoria": ["Altona", "Euroa"]
+}, "Canada": {
+"Alberta": ["Acadia", "Bighorn"],
+"Columbia": ["Washington", ""]
+},
+}
+window.onload = function () {
+var countySel = document.getElementById("countySel"),
+stateSel = document.getElementById("stateSel"),
+districtSel = document.getElementById("districtSel");
+for (var country in stateObject) {
+countySel.options[countySel.options.length] = new Option(country, country);
+}
+countySel.onchange = function () {
+stateSel.length = 1; // remove all options bar first
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+for (var state in stateObject[this.value]) {
+stateSel.options[stateSel.options.length] = new Option(state, state);
+}
+}
+countySel.onchange(); // reset in case page is reloaded
+stateSel.onchange = function () {
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+var district = stateObject[countySel.value][this.value];
+for (var i = 0; i < district.length; i++) {
+districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+}
+}
+}
+
+
+
+
+
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+
+
+
+function loginValidate() {
+  var u1 = document.getElementById("uname").value;
+  var p1 = document.getElementById("pname").value;
+  var e1 = document.getElementById("ename").value;
+  var atposition=e1.indexOf("@");  
+  var dotposition=e1.lastIndexOf("."); 
+  	if (u1 == " "|| u1==null) {
+   	 	alert("Name must be filled out");
+  	}
+	if (p1 == " " || p1==null) {
+   		 alert("password must be filled out");
+  	}
+	if (p1.length < 8) {
+        	alert("Your password must be at least 8 characters"); 
+    	}
+    	if (p1.search(/[a-z]/) < 0) {
+        	alert("Your password must contain at least one small letter.");
+    	}
+	if (p1.search(/[A-Z]/) < 0) {
+        	alert("Your password must contain at least one capital letter.");
+    	}
+    	if (p1.search(/[0-9]/) < 0) {
+        	alert("Your password must contain at least one digit."); 
+    	}
+	if (e1 == " " || e1==null) {
+    		alert("emailname  must be filled out");
+  	}
+ 
+	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=e1.length){  
+ 	 	alert("Please enter a valid e-mail address");  
+  	}  
+}
+
+
+</script>
+
+
+    </body>
+</html>
