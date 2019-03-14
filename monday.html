@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <style>
+        h2 {
+            color: #F5B041;
+        }
+
+        button {
+            background-color: rgb(211, 0, 0);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: rgb(159, 198, 249);
+            color: black;
+        }
+
+        center {
+            background: 1px solid rgb(0, 0, 0);
+        }
+
+        #bord{border:2px solid red;width:400px;background-color: rgb(245, 233, 65)}
+    </style>
+</head>
+
+<body>
+    <div>
+        <center>
+        <div id="bord">
+
+            <h1>
+                Welcome To My Calender
+            </h1>
+
+            <h3 id="demo1">January</h3>
+            <h3 id="demo2">Monday</h3>
+
+            <button onclick="changeMonth()">Month</button>
+            <button onclick="dayDetail()"> Days</button>
+        </center>
+        </div>
+    </div>
+
+
+    <script>
+        var names_of_months = ["January", "February", "March", "April",
+            "May", "June", "July", "August",
+            "September", "October", "November", "December"];
+        var days = ["Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday", "Sunday"];
+        var month = 1;
+        function changeMonth() {
+            document.getElementById("demo1").innerHTML = names_of_months[month++];
+            if (month == 12) {
+                month = 0;
+            }
+        }
+
+        var dd = 1;
+        function dayDetail() {
+            document.getElementById("demo2").innerHTML = days[dd++];
+            if (dd == 7) {
+                dd = 0;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
