@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <style>
+        #image {
+
+            align-content: center;
+            border: 1px solid black;
+        }
+
+        button {
+            font-size: 30px;
+            margin: 10px;
+            margin-left: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <img id="image" src="image/img1.jpg" height="500px" width="700px">
+    <br><br>
+
+    <button onclick="prev()">
+        Previous
+    </button>
+    <button onclick="next()">
+        Next
+    </button>
+    <button onclick="shrink()">
+        shrink
+    </button>
+    <script>
+        var a = ['image/img1.jpg', 'image/img2.jpg', 'image/img3.jpg', 'image/img4.jpg', 'image/img5.jpg', 'image/img6.jpg', 'image/img7.jpg'];
+        var i = 1;
+        function next() {
+            if (i < 7) {
+                var Element = document.getElementById("image");
+                Element.setAttribute("src", a[i]);
+                i++;
+            }
+            else {
+                i = 0;
+                var Element = document.getElementById("image");
+                Element.setAttribute("src", a[i]);
+            }
+        }
+        function prev() {
+
+            if (i > 0) {
+                i--;
+                var Element = document.getElementById("image");
+                Element.setAttribute("src", a[i]);
+                console.log(a[i]);
+
+            }
+            else {
+
+                i = 6;
+                var Element = document.getElementById("image");
+                Element.setAttribute("src", a[i]);
+                console.log(a[i]);
+
+
+            }
+
+        }
+        function shrink() {
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
