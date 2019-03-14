@@ -10,10 +10,31 @@
 
         button {
             font-size: 30px;
-            margin: 10px;
-            margin-left: 100px;
+        
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#enlarge").click(function () {
+                var width = parseInt($("img").width());
+                var height = parseInt($("img").height());
+                var width = width + 100;
+                var height = height + 100;
+                $("img").width(width);
+                $("img").height(height);
+            });
+            $("#shrink").click(function () {
+                var width = parseInt($("img").width());
+                var height = parseInt($("img").height());
+                var width = width - 100;
+                var height = height - 100;
+                $("img").width(width);
+                $("img").height(height);
+            });
+        });
+
+    </script>
 
 </head>
 
@@ -27,12 +48,16 @@
     <button onclick="next()">
         Next
     </button>
-    <button onclick="shrink()">
+    <button id="enlarge">
+        enlarge
+    </button>
+    <button id="shrink">
         shrink
     </button>
     <script>
         var a = ['image/img1.jpg', 'image/img2.jpg', 'image/img3.jpg', 'image/img4.jpg', 'image/img5.jpg', 'image/img6.jpg', 'image/img7.jpg'];
         var i = 1;
+        var x = 6;
         function next() {
             if (i < 7) {
                 var Element = document.getElementById("image");
@@ -45,29 +70,24 @@
                 Element.setAttribute("src", a[i]);
             }
         }
+
         function prev() {
 
-            if (i > 0) {
-                i--;
-                var Element = document.getElementById("image");
-                Element.setAttribute("src", a[i]);
-                console.log(a[i]);
+            var Element = document.getElementById("image");
+            Element.setAttribute("src", a[x--]);
+            console.log(a[x]);
 
-            }
-            else {
-
-                i = 6;
+            if (x <= 0) {
+                x = 6;
                 var Element = document.getElementById("image");
-                Element.setAttribute("src", a[i]);
-                console.log(a[i]);
+                Element.setAttribute("src", a[x]);
+                console.log(a[x]);
 
 
             }
 
         }
-        function shrink() {
 
-        }
 
     </script>
 
